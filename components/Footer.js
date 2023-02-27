@@ -52,7 +52,7 @@ const Footer = ({ info, menus, socialLinks }) => {
           </div>
           <div className="footer-bottom">
             <p className="footer-copy">
-              © {new Date().getFullYear()} Daynews.mn • Бүх эрх хуулиар
+              © {new Date().getFullYear()} Ubtimes.mn • Бүх эрх хуулиар
               хамгаалагдсан
             </p>
             <div className="socialsLinks">

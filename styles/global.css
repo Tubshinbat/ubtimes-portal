@@ -193,6 +193,9 @@ header {
 .logo {
   margin-right: 20px;
 }
+.logo img {
+  height: 35px;
+}
 
 .header_search_box {
   position: relative;
@@ -229,12 +232,13 @@ header {
   border: none;
   background: none;
   font-weight: bold;
-  color: #fff;
+  color: #9c9c9c;
 }
 
 .header_top_menu {
   box-shadow: rgba(0, 0, 0, 0.034) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.021) 0px 2px 4px -1px;
+  background-color: #6d50d8;
 }
 
 .headerMenu {
@@ -267,10 +271,10 @@ header {
   position: relative;
   text-decoration: none;
   font-size: 16px;
-  color: #000;
+  color: #fff;
   padding: 15px 0px;
   height: auto;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #6d50d8;
   transition: all 0.3s;
 }
 
@@ -562,6 +566,10 @@ header {
   overflow: hidden;
 }
 
+.side-news-img-15 {
+  flex: 1 15%;
+}
+
 .side-news-img img {
   width: 100%;
   border-radius: 5px;
@@ -678,6 +686,10 @@ a.side-news-link {
   color: #000;
 }
 
+.footer-about img {
+  height: 45px;
+}
+
 /* -------------------------------------------------------------------------
    04. SIDE STYLES
  * ------------------------------------------------------------------------- */
@@ -731,29 +743,29 @@ a.side-news-link {
   width: 100%;
 }
 
-.news__content{
+.news__content {
   margin-bottom: 25px;
   padding-bottom: 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.308);
 }
 
-.news__socials{
+.news__socials {
   position: relative;
   display: flex;
   margin-bottom: 30px;
 }
 
-.news_count{
+.news_count {
   position: relative;
   display: flex;
   width: 100%;
   text-align: center;
   justify-content: center;
-  color:#474d63;
+  color: #474d63;
   font-weight: bold;
-  padding:20px 0px;
+  padding: 20px 0px;
   border-radius: 3px;
-  border:1px solid #e6e6e6;
+  border: 1px solid #e6e6e6;
 }
 
 ul.share-box {
@@ -767,79 +779,78 @@ ul.share-box {
   list-style: none;
 }
 
-.share-box a{
-  
-  color:#fff;
+.share-box a {
+  color: #fff;
   padding: 8px 15px;
   text-decoration: none;
   font-size: 12px;
   border-radius: 3px;
 }
 
-.share-box .facebook a{
+.share-box .facebook a {
   background: #1877f2;
 }
 
-.share-box .twitter a{
-  background:rgb(29, 155, 240);
+.share-box .twitter a {
+  background: rgb(29, 155, 240);
 }
 
-.share-box  a svg,
-.share-box  a i{
-  margin-right:3px;
+.share-box a svg,
+.share-box a i {
+  margin-right: 3px;
 }
 
-.news__comment_box{
+.news__comment_box {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  margin:30px 0px;
+  margin: 30px 0px;
 }
 
-.news__comment_box input{
+.news__comment_box input {
   width: 100%;
-      color: #999;
-        margin-bottom: 16px;
-        padding:8px 0px;
-        padding-left:15px;
-        border:1px solid #e6e6e6;
-        border-radius: 3px;
+  color: #999;
+  margin-bottom: 16px;
+  padding: 8px 0px;
+  padding-left: 15px;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
 }
 
-.news__comment_box input:focus-visible{
+.news__comment_box input:focus-visible {
   outline: #1877f2;
 }
 
-.news__comment_box textarea{
+.news__comment_box textarea {
   width: 100%;
   height: 200px;
   padding: 10px;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
-.comment_btn{
+.comment_btn {
   background: #474d63;
-  border:none;
-  color:#fff;
-  padding:9px 30px;
+  border: none;
+  color: #fff;
+  padding: 9px 30px;
   transition: all 0.3s;
   border-radius: 3px;
 }
 
-.comment_btn:hover{
+.comment_btn:hover {
   background: #363c4e;
 }
 
-.comment_item{
+.comment_item {
   padding: 15px;
-  border:1px solid rgb(233, 233, 233);
+  border: 1px solid rgb(233, 233, 233);
   margin-bottom: 20px;
   border-radius: 5px;
 }
 
-.write_user{
+.write_user {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -848,19 +859,19 @@ ul.share-box {
   margin-bottom: 10px;
 }
 
-.write_user h6{
+.write_user h6 {
   padding: 0px;
   margin: 0px;
   font-weight: bold;
 }
 
-.write_user span{
-  color:rgb(201, 201, 201);
+.write_user span {
+  color: rgb(201, 201, 201);
   font-size: 11px;
 }
 
-p.comment{
-  margin:0px;  
+p.comment {
+  margin: 0px;
 }
 
 .description blockquote {

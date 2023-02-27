@@ -21,6 +21,7 @@ export default async function RootLayout({ children }) {
   const { rates } = await getRate();
   const { menus } = await getMenus();
   const { socialLinks } = await getSocials();
+
   return (
     <html lang="en">
       {/*
@@ -39,7 +40,6 @@ export default async function RootLayout({ children }) {
       <head />
       <body>
         {" "}
-        <Topbar />
         <Header
           webInfo={webInfo}
           weather={weather}

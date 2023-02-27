@@ -15,127 +15,46 @@ const NewsTopSeaction = async () => {
       <section className="section">
         <div className="container">
           <div className="row">
-            <div className="col-lg-9">
+            <div className="col-lg-8">
               <HighlightNews news={topNews[0]} />
-
-              <div className="row">
-                {topNews &&
-                  topNews.map((news, index) => {
-                    if (index != 0)
-                      return (
-                        <div className="col-lg-4 col-md-4">
-                          <div className="column-news-box">
-                            <div className="column-news-image">
-                              <a href={"/n/" + news.slug}>
-                                <img
-                                  src={base.cdnUrl + "/450/" + news.pictures[0]}
-                                />
-                              </a>
-                            </div>
-                            <div className="column-news-content">
-                              <a
-                                href={"/n/" + news.slug}
-                                className="column-news-title"
-                              >
-                                {news.name}
-                              </a>
-                            </div>
-                            <div className="newsbox-categories">
-                              <a href={"/news/" + news.categories[0].slug}>
-                                {news.categories[0].name}
-                              </a>
-                            </div>
-                            <div className="news_highlight_dt">
-                              <li>
-                                <FontAwesomeIcon icon={faBolt} /> {news.views}
-                              </li>
-                              <li>
-                                <FontAwesomeIcon icon={faClock} />
-                                {moment(news.createAt)
-                                  .utcOffset("+0800")
-                                  .format("YYYY-MM-DD HH:mm:ss")}
-                              </li>
-                            </div>
+            </div>
+            <div className="col-lg-4  ">
+              {topNews &&
+                topNews.map((el, index) => {
+                  if (index != 0)
+                    return (
+                      <div className="side-news" key={`n-${el._id}`}>
+                        <div className="side-news-content">
+                          <a className="side-news-link" href={"/n/" + el.slug}>
+                            {el.name}
+                          </a>
+                          <div className="newsbox-categories">
+                            <a href={"/news/" + el.categories[0].slug}>
+                              {el.categories[0].name}
+                            </a>
+                          </div>
+                          <div className="news_highlight_dt">
+                            <li>
+                              <FontAwesomeIcon icon={faBolt} /> {el.views}
+                            </li>
+                            <li>
+                              <FontAwesomeIcon icon={faClock} />
+                              {moment(el.createAt)
+                                .utcOffset("+0800")
+                                .format("YYYY-MM-DD HH:mm:ss")}
+                            </li>
                           </div>
                         </div>
-                      );
-                  })}
-              </div>
-            </div>
-            <div className="col-lg-3">
-              <div className="side-news-home-mobile">
-                <div class="section-header">
-                  <h3> Шинэ мэдээ </h3>
-                </div>
-                {newNews2 &&
-                  newNews2.map((el) => (
-                    <div className="side-news" key={el._id}>
-                      <div className="side-news-content">
-                        <a className="side-news-link" href={"/n/" + el.slug}>
-                          {el.name}
-                        </a>
-                        <div className="newsbox-categories">
-                          <a href={"/news/" + el.categories[0].slug}>
-                            {el.categories[0].name}
+                        <div className="side-news-img side-news-img-15">
+                          <a href={"/n/" + el.slug}>
+                            <img
+                              src={base.cdnUrl + "/150x150/" + el.pictures[0]}
+                            />
                           </a>
                         </div>
-                        <div className="news_highlight_dt">
-                          <li>
-                            <FontAwesomeIcon icon={faBolt} /> {el.views}
-                          </li>
-                          <li>
-                            <FontAwesomeIcon icon={faClock} />
-                            {moment(el.createAt)
-                              .utcOffset("+0800")
-                              .format("YYYY-MM-DD HH:mm:ss")}
-                          </li>
-                        </div>
                       </div>
-                      <div className="side-news-img">
-                        <a href={"/n/" + el.slug}>
-                          <img
-                            src={base.cdnUrl + "/150x150/" + el.pictures[0]}
-                          />
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-              </div>
-              <div className="side-news-box">
-                {newNews &&
-                  newNews.map((el) => (
-                    <div className="side-news" key={`n-${el._id}`}>
-                      <div className="side-news-content">
-                        <a className="side-news-link" href={"/n/" + el.slug}>
-                          {el.name}
-                        </a>
-                        <div className="newsbox-categories">
-                          <a href={"/news/" + el.categories[0].slug}>
-                            {el.categories[0].name}
-                          </a>
-                        </div>
-                        <div className="news_highlight_dt">
-                          <li>
-                            <FontAwesomeIcon icon={faBolt} /> {el.views}
-                          </li>
-                          <li>
-                            <FontAwesomeIcon icon={faClock} />
-                            {moment(el.createAt)
-                              .utcOffset("+0800")
-                              .format("YYYY-MM-DD HH:mm:ss")}
-                          </li>
-                        </div>
-                      </div>
-                      <div className="side-news-img">
-                        <a href={"/n/" + el.slug}>
-                          <img
-                            src={base.cdnUrl + "/150x150/" + el.pictures[0]}
-                          />
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-              </div>
+                    );
+                })}
             </div>
           </div>
         </div>

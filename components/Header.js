@@ -79,6 +79,18 @@ const Header = ({ webInfo, menus, socialLinks, weather, rates }) => {
                   <p>{rates && rates[13].sellRate}</p>
                 </div>
               </div>
+              <div className="header_search_box">
+                <form action="/search">
+                  <input
+                    name="s"
+                    type="text"
+                    placeholder="Мэдээллээс хайх... "
+                  />{" "}
+                  <button type="submit">
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </form>
+              </div>
             </div>
             <MobileMenu
               info={webInfo}

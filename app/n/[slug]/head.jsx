@@ -10,7 +10,7 @@ export default async function Head({ params }) {
   if (!news) {
     return (
       <>
-        <title>Daynews.mn</title>
+        <title>Ubtimes.mn</title>
       </>
     );
   }
