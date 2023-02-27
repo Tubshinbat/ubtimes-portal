@@ -18,7 +18,7 @@ const NewsTopSeaction = async () => {
             <div className="col-lg-8">
               <HighlightNews news={topNews[0]} />
             </div>
-            <div className="col-lg-4  ">
+            {/* <div className="col-lg-4  ">
               {topNews &&
                 topNews.map((el, index) => {
                   if (index != 0)
@@ -55,7 +55,7 @@ const NewsTopSeaction = async () => {
                       </div>
                     );
                 })}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
