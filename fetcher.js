@@ -1,5 +1,5 @@
 const fetcher = async (url, options = { cache: "no-cache" }) => {
-  const res = await fetch(url);
+  const res = await fetch(url, options);
 
   if (!res.ok) {
     const error = new Error("An error occurred while fetching the data.");
