@@ -8,9 +8,9 @@ export default function Page() {
     <div>
       <main>
         <NewsTopSeaction />
-        {/* <HomeAds /> */}
-        {/* <TopCategories /> */}
-        {/* <VideoSection /> */}
+        <HomeAds />
+        <TopCategories />
+        <VideoSection />
       </main>
     </div>
   );
