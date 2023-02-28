@@ -8,8 +8,7 @@ import { getNews } from "lib/news";
 
 const NewsTopSeaction = async () => {
   const { news: topNews } = await getNews(`star=true&limit=4&status=true`);
-  const { news: newNews } = await getNews(`limit=15&status=true`);
-  const { news: newNews2 } = await getNews(`limit=7&status=true`);
+
   return (
     <>
       <section className="section">
@@ -20,6 +19,7 @@ const NewsTopSeaction = async () => {
             </div>
             <div className="col-lg-4  ">
               {topNews &&
+                topNews.length > 0 &&
                 topNews.map((el, index) => {
                   if (index != 0)
                     return (
