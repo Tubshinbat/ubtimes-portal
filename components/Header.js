@@ -52,7 +52,7 @@ const Header = ({ webInfo, menus, socialLinks, weather, rates }) => {
               <div className="logo">
                 <a href="/">
                   <img
-                    src={`${base.cdnUrl}/${webInfo.logo}`}
+                    src={`${base.cdnUrl}/${webInfo.whiteLogo}`}
                     className="headerLogo"
                   />
                 </a>
@@ -61,10 +61,10 @@ const Header = ({ webInfo, menus, socialLinks, weather, rates }) => {
 
             <div className="header_boards">
               <div className="header_board">
-                <img src="/images/sun.svg" />
                 <div className="board-text">
                   <span>Улаанбаатар</span>
                   <p>
+                    <img src="/images/sun.svg" />
                     {weathers &&
                       weathers.forecast5day &&
                       weathers.forecast5day[26].data.weather[0].temperatureDay
@@ -73,10 +73,12 @@ const Header = ({ webInfo, menus, socialLinks, weather, rates }) => {
                 </div>
               </div>
               <div className="header_board">
-                <img src="/images/usa.jpg" />
                 <div className="board-text">
                   <span>Валютын ханш</span>
-                  <p>{rates && rates[13].sellRate}</p>
+                  <p>
+                    <img src="/images/usa.jpg" />
+                    {rates && rates[13].sellRate}
+                  </p>
                 </div>
               </div>
               <div className="header_search_box">

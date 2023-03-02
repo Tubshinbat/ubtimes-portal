@@ -25,7 +25,7 @@ const Footer = ({ info, menus, socialLinks }) => {
             <div className="footer-about">
               {info.logo && (
                 <Link href="/">
-                  <img src={`${base.cdnUrl}/${info.logo}`} />
+                  <img src={`${base.cdnUrl}/${info.whiteLogo}`} />
                 </Link>
               )}
               <p className="footerDescription">{info.siteInfo}</p>

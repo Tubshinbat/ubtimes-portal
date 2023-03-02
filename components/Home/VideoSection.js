@@ -6,7 +6,7 @@ import moment from "moment";
 import { getNews } from "lib/news";
 
 const VideoSection = async () => {
-  const { news: videoNews } = await getNews(`limit=4&status=true&type=video`);
+  const { news: videoNews } = await getNews(`limit=8&status=true&type=video`);
   return (
     <>
       <section className="section video_section">
