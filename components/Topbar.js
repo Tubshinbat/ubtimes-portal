@@ -1,4 +1,8 @@
-export default () => {
+"use client";
+import { useState } from "react";
+
+export default ({ weather, rates }) => {
+  const [weathers] = useState(weather && JSON.parse(weather).xml);
   const todayMongolia = () => {
     let month, day;
     const timeElapsed = Date.now();
@@ -44,17 +48,29 @@ export default () => {
       <div className="topbar">
         <div className="container">
           <div className="topbar_container">
+            <div className="header_boards">
+              <div className="header_board">
+                <div className="board-text">
+                  <span>Улаанбаатар</span>
+
+                  <img src="/images/sun.svg" />
+                  {weathers &&
+                    weathers.forecast5day &&
+                    weathers.forecast5day[26].data.weather[0].temperatureDay
+                      ._text}
+                </div>
+              </div>
+              <div className="header_board">
+                <div className="board-text">
+                  <span>Валютын ханш</span>
+                  <img src="/images/usa.jpg" />
+                  {rates && rates[13].sellRate}
+                </div>
+              </div>
+            </div>
             <div className="topbar_today">
               <i className={`far fa-calendar-alt `}></i>
-              <p> {todayMongolia()} </p>
-            </div>
-            <div className="header_search_box">
-              <form action="/search">
-                <input name="s" type="text" placeholder="Мэдээллээс хайх... " />{" "}
-                <button type="submit">
-                  <i className="fa-solid fa-magnifying-glass"></i>
-                </button>
-              </form>
+              {todayMongolia()}
             </div>
           </div>
         </div>

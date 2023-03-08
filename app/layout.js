@@ -39,11 +39,10 @@ export default async function RootLayout({ children }) {
       />
       <head />
       <body>
-        {" "}
         <Header
           webInfo={webInfo}
-          weather={weather}
           menus={menus}
+          weather={weather}
           rates={rates}
         />
         {children}

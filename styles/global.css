@@ -23,7 +23,7 @@ html {
 }
 body {
   font-family: "Source Sans Pro", "Roboto", sans-serif;
-  background: #fff;
+  background: #f4f5f9;
   width: 100%;
   height: 100%;
   scroll-behavior: auto;
@@ -155,10 +155,11 @@ body {
  * ------------------------------------------------------------------------- */
 
 .topbar {
-  background-color: #474d63;
-  color: #b0b3bd;
+  background-color: #fff;
+  color: rgb(80, 80, 80);
   font-size: 14px;
-  padding: 5px;
+  padding: 10px 0px;
+  border-bottom: 1px solid #f4f5f9;
 }
 
 .topbar_container {
@@ -178,7 +179,9 @@ body {
 }
 
 header {
-  background-color: #171d71;
+  background-color: #fff;
+      box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 5%);
+  
 }
 
 .top_header {
@@ -187,14 +190,66 @@ header {
   width: 100%;
   padding: 40px 0px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .logo {
   margin-right: 20px;
 }
 .logo img {
-  height: 35px;
+  height: 40px;
+}
+
+.search__icon-box {
+  cursor: pointer;
+}
+
+.search__header_form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.search__header_form input{
+  position: relative;
+
+  width: 100%;
+      overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background-color: transparent;
+        border: none;
+        border-radius: 999px;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0;
+        padding: 9px 0 9px 20px;
+        text-align: left;
+        width: 100%;
+        background: #fff;
+        border: 1px solid #dfe0e6;
+        box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 5%);
+}
+
+.search__header_form button{
+position: absolute;
+  z-index: 2;
+  right: 30px;
+  border: none;
+  background:none;
+}
+
+.search__header_form input:focus-visible{
+  outline: rgb(150, 150, 150);
 }
 
 .header_search_box {
@@ -235,11 +290,18 @@ header {
   color: #9c9c9c;
 }
 
-.header_top_menu {
-  box-shadow: rgba(0, 0, 0, 0.034) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.021) 0px 2px 4px -1px;
-  background-color: #1a228b;
+.top__header_menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.header_top_menu {
+    border-top: 1px solid #f4f5f9;
+}
+
+
 
 .headerMenu {
   position: relative;
@@ -247,6 +309,7 @@ header {
   gap: 25px;
   list-style: none;
   padding: 0px;
+  margin:0px;
 }
 
 .headerMenu li {
@@ -271,10 +334,10 @@ header {
   position: relative;
   text-decoration: none;
   font-size: 16px;
-  color: #fff;
+  color: #000;
   padding: 15px 0px;
   height: auto;
-  border-bottom: 2px solid #6d50d8;
+  border-bottom: 2px solid #fff;
   transition: all 0.3s;
 }
 
@@ -355,29 +418,21 @@ header {
   align-items: center;
 }
 .board-text {
-  line-height: 14px;
-  color: #fff;
-}
-
-.board-text span {
-  font-size: 11px;
-  text-transform: uppercase;
-}
-
-.board-text {
-  margin-left: 10px;
-}
-
-.board-text p {
   display: flex;
-  justify-self: center;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
-  margin-bottom: 0px;
-  font-size: 14px;
+  color: rgb(80, 80, 80);;
+  gap:5px
 }
+
+
+
+
 
 .board-text img {
+  display: flex;
+  align-items: center;
   width: 18px;
 }
 
@@ -390,6 +445,42 @@ header {
 /* -------------------------------------------------------------------------
    02. NEWS STYLES
  * ------------------------------------------------------------------------- */
+
+ .top-news-header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ }
+
+ .news_top_header_box{
+
+      position: relative;
+  display: flex;
+  flex: 1 1 25%;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  flex-direction: column;
+    background-size: cover;
+      background-repeat: no-repeat;
+ }
+
+ .news_top_header_box img{
+  top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+    position: relative;
+    transition: all 0.3s;
+ }
+
+ .news_top_name{
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+ }
+
 
 .highNews {
   position: relative;
@@ -478,6 +569,7 @@ header {
   width: 100%;
   max-height: 350px;
   overflow: hidden;
+  background-size: cover;
 }
 
 .highlight-img a {
@@ -486,11 +578,12 @@ header {
   transition: all 0.3s;
 }
 
-.highlight-img img {
+.highlight-img  {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: 0;
   transition: all 0.3s;

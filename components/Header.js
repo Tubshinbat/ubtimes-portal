@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
 
 const Header = ({ webInfo, menus, socialLinks, weather, rates }) => {
-  const [weathers] = useState(weather && JSON.parse(weather).xml);
-
   const renderMenu = (categories, child = false, parentSlug = "") => {
     let myCategories = [];
     categories &&
@@ -30,7 +28,47 @@ const Header = ({ webInfo, menus, socialLinks, weather, rates }) => {
 
     return myCategories;
   };
+  const todayMongolia = () => {
+    let month, day;
+    const timeElapsed = Date.now();
+    const today = new Date(timeElapsed);
+    let year = today.getFullYear();
+    const arrayDate = today.toLocaleDateString().split("/");
+    const stringDate = today.toString().split(" ");
+    if (stringDate) {
+      switch (stringDate[0]) {
+        case "Sun":
+          day = "Ням";
+          break;
+        case "Mon":
+          day = "Даваа";
+          break;
+        case "Tue":
+          day = "Мягмар";
+          break;
+        case "Wed":
+          day = "Лхагва";
+          break;
+        case "Thu":
+          day = "Пүрэв";
+          break;
+        case "Fri":
+          day = "Баасан";
+          break;
+        case "Sat":
+          day = "Бямба";
+          break;
+        default:
+          day = "";
+      }
+    }
 
+    month = arrayDate[0] + " сарын";
+
+    return `${month} ${arrayDate[1]} , ${day}`;
+  };
+  const [weathers] = useState(weather && JSON.parse(weather).xml);
+  const [searchOpen, setSearchOpen] = useState(false);
   useEffect(() => {
     // window.onscroll = () => {
     //   let header = document.querySelector(".main__header");
@@ -43,70 +81,86 @@ const Header = ({ webInfo, menus, socialLinks, weather, rates }) => {
     // };
   }, []);
 
+  const handleSearch = () => {
+    setSearchOpen((bf) => (bf === true ? false : true));
+  };
+
   return (
     <>
       <header className="main__header">
-        <div className="container">
-          <div className="top_header">
-            <div className="header-left">
-              <div className="logo">
-                <a href="/">
-                  <img
-                    src={`${base.cdnUrl}/${webInfo.whiteLogo}`}
-                    className="headerLogo"
-                  />
-                </a>
-              </div>
-            </div>
+        <div className="topbar">
+          <div className="container">
+            <div className="topbar_container">
+              <div className="header_boards">
+                <div className="header_board">
+                  <div className="board-text">
+                    <span>Улаанбаатар</span>
 
-            <div className="header_boards">
-              <div className="header_board">
-                <div className="board-text">
-                  <span>Улаанбаатар</span>
-                  <p>
                     <img src="/images/sun.svg" />
                     {weathers &&
                       weathers.forecast5day &&
                       weathers.forecast5day[26].data.weather[0].temperatureDay
                         ._text}
-                  </p>
+                  </div>
                 </div>
-              </div>
-              <div className="header_board">
-                <div className="board-text">
-                  <span>Валютын ханш</span>
-                  <p>
+                <div className="header_board">
+                  <div className="board-text">
+                    <span>Валютын ханш</span>
                     <img src="/images/usa.jpg" />
                     {rates && rates[13].sellRate}
-                  </p>
+                  </div>
                 </div>
               </div>
-              <div className="header_search_box">
-                <form action="/search">
-                  <input
-                    name="s"
-                    type="text"
-                    placeholder="Мэдээллээс хайх... "
-                  />{" "}
-                  <button type="submit">
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                  </button>
-                </form>
+              <div className="topbar_today">
+                <i className={`far fa-calendar-alt `}></i>
+                {todayMongolia()}
               </div>
             </div>
-            <MobileMenu
-              info={webInfo}
-              socialLinks={socialLinks}
-              menus={menus}
-            />
           </div>
         </div>
-      </header>
-      <nav className="header_top_menu">
         <div className="container">
-          <ul className={`headerMenu`}>{renderMenu(menus)}</ul>
+          <div className="top_header">
+            <div className="logo">
+              <a href="/">
+                <img
+                  src={`${base.cdnUrl}/${webInfo.logo}`}
+                  className="headerLogo"
+                />
+              </a>
+            </div>
+          </div>
         </div>
-      </nav>
+
+        <nav className="header_top_menu">
+          <div className="container">
+            <div className="top__header_menu">
+              <MobileMenu
+                info={webInfo}
+                socialLinks={socialLinks}
+                menus={menus}
+              />
+              <ul className={`headerMenu`}>{renderMenu(menus)}</ul>
+              <div className="search__icon-box" onClick={() => handleSearch()}>
+                <i className="fa fa-search"></i>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div
+        className={`search__header_box ${
+          searchOpen == false ? "displayNone" : "displayBlock"
+        }`}
+      >
+        <div className="container">
+          <form action="/search" className="search__header_form">
+            <input name="s" type="text" placeholder="Мэдээллээс хайх... " />{" "}
+            <button type="submit">
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+      </div>
     </>
   );
 };
