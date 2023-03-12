@@ -25,20 +25,22 @@
 
 @media (max-width: 1440px) {
   .headerMenu {
-    gap: 12px;
+    gap: 14px;
   }
-  .burger__menu {
-    display: none;
-  }
+  
 }
 
 @media (max-width: 1200px) {
   .sides {
     margin-top: 50px;
   }
-  .header_boards {
-    display: none;
+  .top_header {
+    justify-content: space-between;
   }
+  .top_header .burger__menu{
+    display: flex;
+  }
+
   .highlight-img a {
     position: relative;
     overflow: hidden;
@@ -109,12 +111,20 @@
     align-items: center;
   }
 
-  .headerContact {
-    display: none;
-  }
-  
+
 
   .headerMenu {
     gap: 15px;
   }
+}
+
+@media (width:1020px){
+  .top-news-header{
+    display: flex;
+    flex-direction: column  ;
+  }
+  .news_top_header_box {
+ 
+    flex: 0 0 50%;
+     }
 }

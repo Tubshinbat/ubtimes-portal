@@ -1,6 +1,7 @@
 import NewsTopSeaction from "components/Home/NewsTopSeaction";
 import HomeAds from "components/Home/HomeAds";
-import TopCategories from "components/Home/TopCategories";
+import NewNews from "components/Home/NewNews";
+import TopCategories from 'components/Home/TopCategories'
 import VideoSection from "components/Home/VideoSection";
 import TopAfterCategories from "components/Home/TopAfterCategories";
 
@@ -9,10 +10,11 @@ export default function Page() {
     <div>
       <main>
         <NewsTopSeaction />
+        <NewNews />
         <HomeAds />
         <TopCategories />
-        <VideoSection />
-        <TopAfterCategories />
+       
+        {/* <TopAfterCategories /> */}
       </main>
     </div>
   );

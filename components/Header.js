@@ -128,6 +128,11 @@ const Header = ({ webInfo, menus, socialLinks, weather, rates }) => {
                 />
               </a>
             </div>
+            <MobileMenu
+                info={webInfo}
+                socialLinks={socialLinks}
+                menus={menus}
+              />
           </div>
         </div>
 

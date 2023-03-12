@@ -11,23 +11,26 @@ const NewsTopSeaction = async () => {
 
   return (
     <>
-      <section className="">
+      <section className="" >
         <div className=" top-news-header">
           {topNews &&
             topNews.length > 0 &&
             topNews.map((el, index) => {
               return (
-                <div
+                <a
                   className="news_top_header_box"
+                  href={"/n/" + el.slug}
                   key={`n-${el._id}`}
                   style={{
                     backgroundImage: `url(${base.cdnUrl}/450/${el.pictures[0]})`,
                   }}
                 >
-                  <a className="" href={"/n/" + el.slug}>
-                    <p className="news_top_name"> {el.name}</p>
-                  </a>
-                </div>
+                  
+                    <div className="news_top_name"> <p>{el.name} </p>
+                    <span className="create__at"> {moment(el.createAt)
+                            .utcOffset("+0800")
+                            .format("YYYY-MM-DD HH:mm:ss")} </span></div>
+                </a>
               );
             })}
         </div>

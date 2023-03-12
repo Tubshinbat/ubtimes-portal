@@ -6,7 +6,7 @@ import moment from "moment";
 import { getNews } from "lib/news";
 
 const VideoSection = async () => {
-  const { news: videoNews } = await getNews(`limit=8&status=true&type=video`);
+  const { news: videoNews } = await getNews(`limit=4&status=true&type=video`);
   return (
     <>
       <section className="section video_section">
@@ -24,6 +24,9 @@ const VideoSection = async () => {
                         <a href={"/n/" + news.slug}>
                           <img src={base.cdnUrl + "/450/" + news.pictures[0]} />
                         </a>
+                        <div className="play_button">
+                        <i className="fa-solid fa-play"></i>
+                        </div>
                       </div>
                       <div className="column-news-content">
                         <a
