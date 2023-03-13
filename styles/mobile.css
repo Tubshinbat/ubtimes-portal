@@ -239,6 +239,12 @@
   .headerLogo {
     width: 60%;
   }
+  .logo img{
+    height: auto;
+  }
+  .top_header .burger__menu{
+    width: 60px;
+  }
   .footer {
     display: flex;
     flex-direction: column;
